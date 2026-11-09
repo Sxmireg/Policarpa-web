@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institución Educativa Técnica Policarpa Salavarrieta</title>
+    <!-- Iconos Profesionales -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        /* PALETA DE COLORES Y VARIABLES INSTITUCIONALES */
+        :root {
+            --blue-dark: #0A192F;
+            --blue-medium: #172A45;
+            --gold: #D4AF37;
+            --gold-hover: #AA882C;
+            --white: #FFFFFF;
+            --light-bg: #F4F6F9;
+            --text-dark: #333333;
+            --text-muted: #666666;
+            --transition: all 0.3s ease;
+        }
+
+        /* ESTILOS GENERALES Y CONFIGURACIÓN RESPONSIVE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+        }
+
+        body {
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .bg-light { background-color: var(--light-bg); }
+        .bg-blue { background-color: var(--blue-dark); color: var(--white); }
+        .text-gold { color: var(--gold); }
+        .text-blue { color: var(--blue-dark); }
+        .text-center { text-align: center; }
+        .mt-4 { margin-top: 2rem; }
+        .w-100 { width: 100%; }
+
+        /* CABECERAS DE SECCIÓN */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--blue-dark);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-header.text-white h2 {
+            color: var(--white);
+        }
+
+        .divider {
+            width: 80px;
+            height: 4px;
+            background-color: var(--gold);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* BARRA SUPERIOR DE CONTACTO */
+        .top-bar {
+            background-color: var(--blue-medium);
+            color: var(--white);
+            font-size: 0.85rem;
+            padding: 10px 0;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .top-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* MENÚ DE NAVEGACIÓN MODERNO */
+        .main-header {
+            background-color: var(--blue-dark);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .escudo-placeholder {
+            width: 50px;
+            height: 50px;
+            background-color: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blue-dark);
+            font-size: 1.5rem;
+        }
+
+        .logo-text h1 {
+            color: var(--white);
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .logo-text span {
+            color: var(--gold);
+            font-size: 0.85rem;
+            display: block;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: var(--transition);
+            padding: 5px 10px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--gold);
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* PORTADA PRINCIPAL (HERO) */
+        .hero-section {
+            position: relative;
+            height: 80vh;
+            min-height: 500px;
+            background: linear-gradient(135deg, #0A192F 0%, #172A45 100%);
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .hero-content h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content .highlight {
+            color: var(--gold);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 40px;
+            color: #E2E8F0;
+        }
+
+        /* BOTONES ELEGANTES */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--gold);
+            color: var(--blue-dark);
+            border: 2px solid var(--gold);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--gold-hover);
+            border-color: var(--gold-hover);
+            color: var(--white);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+            margin-left: 15px;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--blue-dark);
+        }
+
+        /* SISTEMA DE REJILLAS AUTOMÁTICAS */
+        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+        /* TARJETAS INSTITUCIONALES (CARDS) */
+        .card {
+            background-color: var(--white);
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-top: 4px solid var(--blue-dark);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .card-dark {
+            background-color: var(--blue-dark);
+            color: var(--white);
+            border-top: 4px solid var(--gold);
+        }
+
+        .card-dark h3 {
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        /* SECCIÓN VALORES */
+        .valor-box {
+            background: var(--white);
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border-bottom: 3px solid transparent;
+            transition: var(--transition);
+        }
+
+        .valor-box:hover {
+            border-bottom: 3px solid var(--gold);
+            transform: translateY(-3px);
+        }
+
+        .valor-icon {
+            font-size: 2rem;
+            color: var(--blue-dark);
+            margin-bottom: 15px;
+        }
+
+        /* COMUNIDAD EDUCATIVA */
+        .comunidad-card {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .comunidad-card i {
+            font-size: 3.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .comunidad-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* SECCIÓN NOTICIAS */
+        .noticia-item {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .img-placeholder {
+            height: 200px;
+            background-color: #E2E8F0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--blue-medium);
+        }
+
+        .noticia-info { padding: 25px; }
+        .noticia-info .date { font-size: 0.85rem; color: var(--gold-hover); font-weight: 600; display: block; margin-bottom: 10px; }
+        .noticia-info h4 { font-size: 1.25rem; margin-bottom: 12px; color: var(--blue-dark); }
+        .read-more { display: inline-block; margin-top: 15px; color: var(--blue-dark); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+
+        /* RECUADROS DE LA GALERÍA */
+        .galeria-placeholder {
+            height: 220px;
+            background-color: var(--blue-medium);
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            gap: 10px;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+      
